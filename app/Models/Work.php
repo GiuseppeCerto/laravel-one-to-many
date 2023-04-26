@@ -13,6 +13,12 @@ class Work extends Model
     protected $fillable = [
         'name',
         'description',
-        'slug'
+        'slug',
+        'type_id'
     ];
+
+    public function type()
+    {
+        return $this->belongsTo(Type::class);
+    }
 }
