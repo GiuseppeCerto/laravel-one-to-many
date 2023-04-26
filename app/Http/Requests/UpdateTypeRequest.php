@@ -1,11 +1,10 @@
 <?php
 
 namespace App\Http\Requests;
-use Illuminate\Validation\Rule;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateWorkRequest extends FormRequest
+class UpdateTypeRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -14,7 +13,7 @@ class UpdateWorkRequest extends FormRequest
      */
     public function authorize()
     {
-        return true;
+        return false;
     }
 
     /**
@@ -25,13 +24,7 @@ class UpdateWorkRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => [
-                'required',
-                'max:150',
-                Rule::unique('works', 'name')->ignore($this->work)
-            ],
-            'description' => 'string',
-            'type_id' => 'nullable|exists:types,id'
+            //
         ];
     }
 }

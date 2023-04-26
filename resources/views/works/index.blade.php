@@ -43,6 +43,7 @@
                 <td>
                     <a href="{{ route('works.show',$work) }}">{{ $work->name }}</a>
                 </td>
+                <td>{{ $work->type ? $work->type->name : '-' }} </td>
                 <td>{{ $work->description }}</td>
                 <td>{{ $work->slug }}</td>
                 <td>{{ $work->created_at }}</td>
@@ -50,13 +51,13 @@
                 <td>
                     <div class="d-flex gap-2">
                         <a class="btn btn-sm btn-secondary" href="{{ route('works.edit',$work) }}">Edit</a>
-                        <form action="{{ route('works.destroy',$work) }}" method="POST">
+                        <form action="{{ route('works.destroy',$work) }}" method="work">
                             @csrf
                             @method('DELETE')
                             <input class="btn btn-sm btn-danger" type="submit" value="Delete">
                         </form>
                         @if($work->trashed())
-                            <form action="{{ route('works.restore',$work) }}" method="POST">
+                            <form action="{{ route('works.restore',$work) }}" method="work">
                                 @csrf
                                 <input class="btn btn-sm btn-success" type="submit" value="Restore">
                             </form>

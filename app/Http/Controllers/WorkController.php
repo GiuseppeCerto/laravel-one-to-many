@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreWorkRequest;
 use App\Http\Requests\UpdateWorkRequest;
+use App\Models\Type;
 use App\Models\Work;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -37,6 +38,8 @@ class WorkController extends Controller
      */
     public function create()
     {
+        $types = Type::orderBy('name', 'asc')->get();
+
         return view('works.create');
     }
 
@@ -76,6 +79,8 @@ class WorkController extends Controller
      */
     public function edit(Work $work)
     {
+        $types = Type::orderBy('name', 'asc')->get();
+
         return view('works.edit', compact('work'));
     }
 
