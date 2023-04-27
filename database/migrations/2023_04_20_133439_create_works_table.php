@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('works', function (Blueprint $table) {
             $table->id();
             $table->string('name', 150)->unique();
-            $table->string('client');
+            $table->string('client')->nullable();
             $table->text('description');
             $table->string('slug');
             $table->softDeletes();

@@ -29,7 +29,7 @@
           <tr>
             <th>ID</th>
             <th>Name</th>
-            <th>Client</th>
+            <th>Type</th>
             <th>Description</th>
             <th>Creation data</th>
             <th>Change data</th>
@@ -51,16 +51,16 @@
                 <td>
                     <div class="d-flex gap-2">
                         <a class="btn btn-sm btn-secondary" href="{{ route('works.edit',$work) }}">Edit</a>
-                        <form action="{{ route('works.destroy',$work) }}" method="work">
+                        <form action="{{ route('works.destroy',$work) }}" method="POST">
                             @csrf
                             @method('DELETE')
                             <input class="btn btn-sm btn-danger" type="submit" value="Delete">
                         </form>
                         @if($work->trashed())
-                            <form action="{{ route('works.restore',$work) }}" method="work">
-                                @csrf
-                                <input class="btn btn-sm btn-success" type="submit" value="Restore">
-                            </form>
+                          <form action="{{ route('works.restore',$work) }}" method="POST">
+                            @csrf
+                            <input class="btn btn-sm btn-success" type="submit" value="Restore">
+                          </form>
                         @endif
                     </div>
                 </td>
