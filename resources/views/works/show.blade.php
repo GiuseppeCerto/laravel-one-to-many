@@ -3,8 +3,15 @@
 @section('content')
     <div class="container">
         <div class="d-flex align-items-center">
-            <div class="me-auto">
-                <h1>{{ $work->name }}</h1>
+            <div class="me-auto mt-4">
+                <h1>
+                    {{ $work->name }}
+                    @if($work->type)
+                        <span class="badge rounded-pill bg-warning">{{ $work->type->name }}</span>
+                    @else
+                        <span class="badge rounded-pill bg-secondary">No Type</span>
+                    @endif
+                </h1>
                 <p>/{{ $work->slug }}</p>
             </div>
 
