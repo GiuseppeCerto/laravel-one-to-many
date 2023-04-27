@@ -40,7 +40,7 @@ class WorkController extends Controller
     {
         $types = Type::orderBy('name', 'asc')->get();
 
-        return view('works.create');
+        return view('works.create', compact('types'));
     }
 
     /**
@@ -81,7 +81,7 @@ class WorkController extends Controller
     {
         $types = Type::orderBy('name', 'asc')->get();
 
-        return view('works.edit', compact('work'));
+        return view('works.edit', compact('work', 'types'));
     }
 
     /**

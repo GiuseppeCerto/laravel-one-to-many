@@ -26,8 +26,6 @@
                   <option @selected( old('type_id') == $type->id ) value="{{ $type->id }}">{{ $type->name }}</option>
                 @endforeach
               </select>
-              {{-- <input type="text" name="title" class="form-control @error('title') is-invalid @enderror" value="{{ old('title') }}" id="title" aria-describedby="titleHelp"> --}}
-              {{-- errore title --}}
               @error('type_id')
                 <div class="invalid-feedback">
                     {{ $message }}

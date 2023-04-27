@@ -12,7 +12,6 @@
           <div class="mb-3">
               <label for="name" class="form-label">Title</label>
               <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" value="{{ old('name',$work->name) }}" id="name" aria-describedby="nameHelp">
-              {{-- errore name --}}
               @error('name')
                 <div class="invalid-feedback">
                     {{ $message }}
@@ -24,7 +23,7 @@
               <select class="form-select @error('type_id') is-invalid @enderror" id="type-id" name="type_id" aria-label="Default select example">
                 <option value="" selected>Select Type</option>
                 @foreach ($types as $type)
-                  <option @selected( old('type_id', $post->type_id ) == $type->id ) value="{{ $type->id }}">{{ $type->name }}</option>
+                  <option @selected( old('type_id', $work->type_id ) == $type->id ) value="{{ $type->id }}">{{ $type->name }}</option>
                 @endforeach
               </select>
               @error('type_id')
