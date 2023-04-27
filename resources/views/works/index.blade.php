@@ -31,7 +31,7 @@
             <th>Name</th>
             <th>Type</th>
             <th>Description</th>
-            <th>Client</th>
+            <th>Slug</th>
             <th>Creation data</th>
             <th>Change data</th>
           </tr>
