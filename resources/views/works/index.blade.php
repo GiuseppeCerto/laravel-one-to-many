@@ -31,9 +31,9 @@
             <th>Name</th>
             <th>Type</th>
             <th>Description</th>
+            <th>Client</th>
             <th>Creation data</th>
             <th>Change data</th>
-            <th></th>
           </tr>
         </thead>
         <tbody>
